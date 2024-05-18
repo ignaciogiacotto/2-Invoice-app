@@ -5,8 +5,13 @@ import { invoiceData } from '../data/invoice.data';
 @Injectable({
   providedIn: 'root'
 })
-export class ItemService {
+export class InvoiceService {
   
-  private invoice: Invoice = invoiceData
+  private invoice: Invoice = invoiceData;
+
   constructor() { }
+
+  getInvoice(): Invoice {
+    return this.invoice;
+  }
 }
