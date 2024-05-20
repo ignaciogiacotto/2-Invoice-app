@@ -20,12 +20,14 @@ import { TotalComponent } from '../total/total.component';
 export class InvoiceComponent implements OnInit {
 
   invoice!: Invoice;
-  constructor(private service: InvoiceService){
-    
+  constructor(private service: InvoiceService){    
   }
   ngOnInit(): void {
-
-    this.invoice = this.service.getInvoice();
-    
+    this.invoice = this.service.getInvoice();    
   }
+
+  removeItem(id: number){
+    this.invoice = this.service.remove(id);
+  }
+  
 }
